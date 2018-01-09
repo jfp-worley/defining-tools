@@ -1,0 +1,35 @@
+
+[[TOOL-FAMILY extends Specification]] >>>>> Identical to MATERIAL-FAMILY & HARDWARE-FAMILY - could be one schema: FAMILY?
+
+	{
+		"name": "string",
+		"identifier": "string",
+		"description": "string",
+		"version": "1.0.0",
+		"options": {},
+		"schema": "$ref:schema/fabbed/tool-family"
+	}
+
+e.g.
+
+	{
+		"name": "CNC router bits",
+		"identifier": "cnc-router-bits",
+		"description": "Router bits specifically designed for use on CNC routers.",
+		"version": "1.0.0",
+		"options": {},
+		"schema": "$ref:schema/fabbed/tool-family"
+	}
+
+e.g.
+
+	{
+		"name": "Hand tools",
+		"identifier": "hand-tools",
+		"description": "A tool held in the hand and operated without electricity or other power.",
+		"version": "1.0.0",
+		"options": {},
+		"schema": "$ref:schema/fabbed/tool-family"
+	}
+
+

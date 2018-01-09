@@ -1,0 +1,166 @@
+[[TOOL-SET extends Specification]] Reguarly used combinations of tool needed for particular tasks. Tool sets contain tool-products with options specified. Does not contain tool objects.
+
+	{
+		"name": "string",
+		"identifier": "string",
+		"description": "string",
+		"version": "1.0.0",
+		"options": {
+			"tool-objects": {
+				"name": "tool-objets",
+				"description": "Specific tool quantifiable configurations within this tool-set",
+				"values": [
+					{
+						"string"
+					}
+				],
+			}
+		},
+		"schema": "$ref:schema/fabbed/tool-set"
+	}
+
+	e.g.
+
+	{
+		"name": "Opendesk furniture assembly tools",
+		"identifier": "Opendesk furniture assembly tool set contains tools needed to assemble Opendesk furniture once parts have been cut on a CNC machine.",
+		"description": "string",
+		"version": "1.0.0",
+		"options": {
+			"tool-set": {
+				"name": "tool-set",
+				"description": "tool products within this tool-set.",
+				"values": [
+					{
+						"name": "Hex key",
+						"identifier": "hex-key",
+						"description": "A hex key, Allen key or Allen wrench is a tool used to drive bolts and screws with hexagonal sockets in their heads.",
+						"version": "1.0.0",
+						"tool-type": "$ref:schema/fabbed/tool-family/hand-tools",
+						"options": {
+							"choices": {
+								"name": "choices",
+								"description": "choices of hex key",
+								"values": [
+									{
+										"name": "Standard",
+										"identifier": "STD",
+										"description": "Standard Hex Key"
+									}
+								]
+							},
+							"sizes": {
+								"names": "sizes",
+								"description": "hex key sizes",
+								"values": [
+									{
+										"name": "hex size",
+										"description": "Hex key head sizes",
+										"options": {
+											"metric": "$ref:entity/fabbed/dimension-collection/standard-metric-hex-key-head-sizes/6mm",
+										}
+									},
+									{
+										"name": "long arm length",
+										"description": "hex key long arm length",
+										"options": {
+											"unit-system": {
+												"metric": "$ref:entity/fabbed/unit/mm",
+											},
+										"quantity": "any"
+										}
+									},
+									{
+										"name": "short arm length",
+										"description": "hex key short arm length",
+										"options": {
+											"unit-system": {
+												"metric": "$ref:entity/fabbed/unit/mm",
+											},
+										"quantity": "any"
+										}
+									}		
+								]
+							},
+							"material": {
+								"name": "materials",
+								"description": "material choices",
+								"values": []
+							},
+							"properties": {
+								"name": "properties",
+								"description": "Other specific hex key properties",
+								"values": []
+							},
+							"manufacturing-standard": {
+								"name": "manufacturing-standard",
+								"description": "List of manufacturing standards.",
+								"values": []	
+							}		
+						},
+					},
+					{	
+						"$ref:entity/fabbed/tool-product/mallet"
+					},
+					{	
+						"$ref:entity/fabbed/tool-product/clamp"
+					},
+				],
+			}
+		},
+		"schema": "$ref:schema/fabbed/tool-set"
+	}
+
+	e.g.
+
+	{
+		"name": "Opendesk furniture finishing tools",
+		"identifier": "Opendesk furniture finishing tool set contains tools needed to finish Opendesk furniture once parts have been cut on a CNC machine.",
+		"description": "string",
+		"version": "1.0.0",
+		"options": {
+			"tool-set": {
+				"name": "tool-set",
+				"description": "tool products within this tool-set.",
+				"values": [
+					{
+						"$ref:entity/fabbed/tool-product/sand-paper"
+					},
+					{	
+						"$ref:entity/fabbed/tool-product/oil"
+					},
+				],
+			}
+		},
+		"schema": "$ref:schema/fabbed/tool-set"
+	}
+
+	e.g.
+
+	{
+		"name": "Opendesk CNC router bits",
+		"identifier": "Opendesk furniture assembly tool set",
+		"description": "string",
+		"version": "1.0.0",
+		"options": {
+			"tool-combination": {
+				"name": "tool-combination",
+				"description": "tool products within this tool-combination.",
+				"values": [
+					{
+						"$ref:entity/fabbed/tool-product/compression-cutter"
+					},
+					{
+						"$ref:entity/fabbed/tool-product/compression-cutter"
+					},
+					{	
+						"$ref:entity/fabbed/tool-product/downcutter"
+					},
+					{	
+						"$ref:entity/fabbed/tool-product/upcutter"
+					},
+				],
+			}
+		},
+		"schema": "$ref:schema/fabbed/tool-set"
+	}

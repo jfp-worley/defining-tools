@@ -1,0 +1,107 @@
+
+[TOOL OBJECT - extends quantifiable-entity] Tool-object refers to a specific item which can be purchased through a supplier. Tool-objects match to tool-product options.
+
+{
+	"name": "string",
+	"identifier": "string",
+	"description": "string",
+	"version": "1.0.0",
+	"type": "value",
+	"options": {
+		"choices": {},
+		"sizes": {},
+		"material": {},
+		"properties": {},
+		"manufacturing-standard": {}
+	},
+	"supplier": "value",
+	"source": "value",
+	"geo-segment": [],
+	"schema": "$ref:schema/fabbed/tool-object"
+}
+
+e.g.
+
+{
+	"name": "WERA Hex-Plus and ball head 6mm hex key",
+	"identifier": "wera-hex-plus-and-ball-head-6mm-hex-key",
+	"description": "These Allen keys or wrenches from WERA feature a Hex-Plus head on the short arm, and a six-sided ball head on the long arm. Hex-Plus offers a bigger contact surface in the screw head, and so reduces the chance of wear and rounding off the corners in Allen head screws. The ball on the long arm is designed to allow the key to be easily inserted into the head and permits the key to be turned at an angle, which is very useful in tight corners.",
+	"version": "1.0.0",
+	"type": "value",
+	"options": {
+		"choices": {
+			"name": "choices",
+			"description": "choices of hex key",
+			"values": [
+				{
+					"name": "Hex-Plus",
+					"identifier": "HPS",
+					"description": "Hex-Plus offers a bigger contact surface in the screw head, and so reduces the chance of wear and rounding off the corners in Allen head screws."
+				},
+				{
+					"name": "Ball head",
+					"identifier": "BHD",
+					"description": "Allows the key to be easily inserted into the head and permits the key to be turned at an angle while used, which is very useful in tight corners."
+				}
+			]
+		},
+		"sizes": {
+			"names": "sizes",
+			"description": "hex key sizes",
+			"values": [
+				{
+					"name": "hex size",
+					"description": "Hex key head sizes",
+					"options": {
+						"metric": "$ref:entity/fabbed/dimension-collection/standard-metric-hex-key-head-sizes/6mm",
+					}
+				},
+				{
+					"name": "long arm length",
+					"description": "hex key long arm length",
+					"options": {
+						"unit-system": {
+							"metric": "$ref:entity/fabbed/unit/mm",
+						},
+					"quantity": "172"
+					}
+				},
+				{
+					"name": "short arm length",
+					"description": "hex key short arm length",
+					"options": {
+						"unit-system": {
+							"metric": "$ref:entity/fabbed/unit/mm",
+						},
+					"quantity": "31"
+					}
+				}		
+			]
+		},
+		"material": {
+			"name": "materials",
+			"description": "material choices",
+			"values": []
+		},
+		"properties": {
+			"name": "properties",
+			"description": "Other specific hex key properties",
+			"values": []
+		},
+		"manufacturing-standard": {
+			"name": "manufacturing-standard",
+			"description": "List of manufacturing standards.",
+			"values": []	
+		}		
+	},
+	"supplier": "$ref:entity/fabbed/supplier/fine-tools",
+	"source":"https://www.fine-tools.com/winkelschluessel.html",
+	"geo-segment": [
+		{
+			"name": "global",
+			"shortcode": "GBL",
+			"description": "Available everywhere"
+		}
+	],
+	"schema": "$ref:schema/fabbed/tool-object"
+}

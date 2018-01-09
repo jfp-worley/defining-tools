@@ -1,0 +1,62 @@
+[[TOOL-TYPE extends Specification]] >>>>> Identical to MATERIAL-TYPE & HARDWARE TYPE - could be one schema: TYPE?
+
+	{
+		"name": "string",
+		"identifier": "string",
+		"description": "string",
+		"version": "1.0.0",
+		"options": {
+			"hardware-family": {
+				"name": "hardware-family",
+				"description": "Families of hardware for classification purposes",
+				"values": [
+					{
+						"string"
+					}
+				],
+			}
+		},
+		"schema": "$ref:schema/fabbed/tool-type"
+	}
+
+e.g.
+
+	{
+		"name": "Solid Carbide Spiral CNC Router Bit",
+		"identifier": "solid-carbide-sprial-cnc-router-bit",
+		"description": "CNC router bits with extreme hardness and resistance to high temperatures with spiral flutes for improved plunging.",
+		"version": "1.0.0",
+		"options": {
+			"tool-family": {
+				"name": "tool-family",
+				"description": "Families of tools for classification purposes",
+				"values": [
+					{
+						"$ref:entity/fabbed/tool-family/cnc-router-bits"
+					}
+				],
+			}
+		},
+		"schema": "$ref:schema/fabbed/tool-type"
+	}
+
+e.g.
+
+	{
+		"name": "Hex-keys",
+		"identifier": "hex-keys",
+		"description": "A hex key, Allen key or Allen wrench is a tool used to drive bolts and screws with hexagonal sockets in their heads.",
+		"version": "1.0.0",
+		"options": {
+			"tool-family": {
+				"name": "tool-family",
+				"description": "Families of tools for classification purposes",
+				"values": [
+					{
+						"$ref:entity/fabbed/tool-family/hand-tools"
+					}
+				],
+			}
+		},
+		"schema": "$ref:schema/fabbed/tool-type"
+	}
